@@ -16,9 +16,9 @@ class Url < ActiveRecord::Base
   end
 
   def make_short_url
-    url = (0...5).map{(65+rand(26)).chr}.join
+    url = (0...5).map{(65+rand(52)).chr}.join
     until unique?(url) 
-      url = (0...5).map{(65+rand(26)).chr}.join
+      url = (0...5).map{(65+rand(52)).chr}.join
     end
     self.short_url = url
   end
